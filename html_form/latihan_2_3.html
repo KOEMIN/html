@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+</head>
+<body>
+    
+    <div id="header">
+        <h1>Judul/Header Website</h1>
+    </div>
+
+    <div id="main">
+        <div id="link">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#"> tokyo</a>
+            </ul>
+
+        </div>
+
+        <div id="content">
+            <form action="proses.php" method="POST" enctype="multipart/form-data">
+                <h2>Form Pendaftaran Mahasiswa Baru</h2>
+            <label for="NamaL">Nama Lengkap</label>
+            <input type="text" id="NamaL" name="NamaL" required><br><br>
+            Tempat/Tanggal Lahir: 
+            <input type="text" name="tempat_lahir" required> 
+            
+            <select name="tgl_lahir">
+                <option value="">Tanggal</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            
+                
+            </select>
+            
+            <select name="bln_lahir">
+                <option value="">Bulan</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="1">04</option>
+                <option value="2">05</option>
+                <option value="3">06</option>
+                <option value="1">07</option>
+                <option value="2">08</option>
+                <option value="3">09</option>
+                <option value="1">10</option>
+                <option value="2">11</option>
+                <option value="3">12</option>
+                
+                
+            </select>
+            
+            <select name="thn_lahir">
+                <option value="">Tahun</option>
+                <option value="1989">1989</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+            </select>
+            <br><br>
+            
+        Agama:
+        <select name="agama">
+            <option value="islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Budha">Budha</option>
+            <option value="Konghucu">Konghucu</option>
+        </select>
+        <br><br>
+
+        Jenis Kelamin:
+        <input type="radio" name="jenis_kelamin" value="Laki-laki"> Laki-laki
+        <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+        <br><br>
+
+        No. Ijazah SMA/MA: <input type="text" name="no_ijazah" required><br><br>
+
+        Foto (Ukuran File Maks. 20KB): <input type="file" name="foto" accept="image*/"><br><br>
+
+        Nama Ayah: <input type="text" name="nama_ayah"><br><br>
+        Nama Ibu: <input type="text" name="nama_ibu"><br><br>
+
+        Alamat Rumah: <br>
+        <textarea name="alamat_rumah" rows="4" cols="40"></textarea><br><br>
+
+        No. Telp: <input type="text" name="no_telp"><br><br>
+
+        Nama Sekolah Asal: <input type="text" name="asal_skl"><br><br>
+
+        Alamat Sekolah Asal: <br>
+        <textarea name="alamat_skl" rows="4" cols="40"></textarea><br><br>
+
+        Jurusan Dipilih:
+        <select name="jurusan">
+            <option value="Komputerasi Akuntansi">Komputerasi Akuntansi</option>
+            <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+            <option value="Teknik Komputer Kontrol">Teknik Komputer Kontrol</option>
+            <option value="Teknik Listrik">Teknik Listrik</option>
+            <option value="Mesin Otomotif">Mesin Otomotif</option>
+            <option value="Perkeretaapian">Perkeretaapian</option>
+            <option value="Teknologi Informasi">Teknologi Informasi</option>
+            <option value="Akuntansi">Akuntansi</option>
+        </select>
+        <br><br>
+
+        Tahu informasi ini dari:
+        <input type="checkbox" name="sumber_info" value="koran"> koran
+        <input type="checkbox" name="sumber_info" value="Website"> Website
+        <input type="checkbox" name="sumber_info" value="televisi"> televisi
+        <input type="checkbox" name="sumber_info" value="Radio"> Radio
+        <input type="checkbox" name="sumber_info" value="Teman"> Teman
+        <br><br>
+        <input type="submit" value="Daftar">
+        <input type="reset" value="Batal">
+        <br><br>
+    </form>
+        </div>
+    </div>
+    <div id="footer">
+        <p><i>copyright@raufahafid_0522023</i></p>
+
+    </div>
+</body>
+</html>
