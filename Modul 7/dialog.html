@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Dialog dengan jQuery</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 50px;
+    }
+
+    #open-dialog {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #open-dialog:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="open-dialog">Buka Dialog</button>
+
+  <div id="my-dialog" title="Pesan Dialog" style="display:none;">
+    <p>Ini adalah dialog sederhana menggunakan jQuery UI.</p>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $("#my-dialog").dialog({
+        autoOpen: false, 
+        modal: true,    
+        buttons: {
+          "OK": function() {
+            $(this).dialog("close"); 
+          }
+        }
+      });
+
+      $("#open-dialog").click(function() {
+        $("#my-dialog").dialog("open");
+      });
+    });
+  </script>
+
+</body>
+</html>

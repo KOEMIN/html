@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Download Dialog dengan Progress Bar</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    #start-download {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #start-download:hover {
+      background-color: #218838;
+    }
+
+    #progressbar {
+      margin-top: 20px;
+      height: 25px;
+    }
+
+    .ui-dialog-titlebar-close {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="start-download">Mulai Download</button>
+
+
+  <div id="download-dialog" title="Mengunduh File..." style="display:none;">
+    <p>Proses download sedang berjalan, harap tunggu...</p>
+    <div id="progressbar"></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+
+      $("#download-dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 400
+      });
+
+      $("#progressbar").progressbar({
+        value: 0
+      });
+
+      $("#start-download").click(function() {
+        let progress = 0;
+        $("#progressbar").progressbar("value", progress);
+        $("#download-dialog").dialog("open");
+
+        let interval = setInterval(function() {
+          progress += 5;
+          $("#progressbar").progressbar("value", progress);
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            $("#download-dialog").dialog("option", "title", "Selesai!");
+            $("#download-dialog p").text("Download selesai! 🎉");
+            setTimeout(() => {
+              $("#download-dialog").dialog("close");
+            }, 1500);
+          }
+        }, 200); 
+      });
+    });
+  </script>
+
+</body>
+</html>

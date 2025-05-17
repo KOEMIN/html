@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Waktu Real-Time</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        
+        .clock-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-width: 320px;
+        }
+        
+        .date-display {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .time-display {
+            font-size: 3rem;
+            color: #0066cc;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        h1 {
+            color: #444;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <h1>Waktu Saat Ini</h1>
+        <div class="date-display" id="current-date">Tanggal</div>
+        <div class="time-display" id="current-time">00:00:00</div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Format tanggal
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('id-ID', options);
+            
+            // Format waktu (jam:menit:detik)
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            
+            // Update elemen HTML
+            document.getElementById('current-date').textContent = dateString;
+            document.getElementById('current-time').textContent = timeString;
+        }
+        
+        // Update waktu segera saat halaman dimuat
+        updateDateTime();
+        
+        // Update waktu setiap 1 detik (1000 milidetik)
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

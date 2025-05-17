@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            width: 150px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            width: 250px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .gender-group {
+            display: inline-block;
+        }
+        .submit-btn{
+            margin-top: 10px;
+            padding: 5px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Pendaftaran</h2>
+    <form id="form_pendaftaran" method="get" action="">
+        <div class="form-group">
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim" required>
+        </div>
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ttl">Tempat, Tanggal Lahir</label>
+            <input type="text" id="Tempat" name="Tempat" required>
+            <input type="date" id="Tanggal" name="Tanggal" required>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="gender-group">
+                <input type="radio" id="laki" name="gender" value="Laki-Laki">
+                <label for="laki" style="width: auto;">Laki-Laki</label>
+                
+                <input type="radio" id="perempuan" name="gender" value="Perempuan" checked>
+                <label for="perempuan" style="width: auto;">Perempuan</label>
+            </div>
+        </div>
+
+         
+        <input type="submit" value="Kirim" class="submit-btn">
+
+    </form>"
+    
+</body>
+</html>

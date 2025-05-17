@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Selector</title>
+</head>
+<style>
+    div p{
+        color: red;
+    }
+    div > p{
+        background-color: yellow;
+    }
+    div + p{
+        background-color: darkgray;
+    }
+    div ~ p{
+        color: cyan;
+    }
+</style>
+<body>
+    <div>
+        <p>Paragraf ini memiliki warna merah dan background berwarna kuning karena berada pada tag div</p>
+        <p>Paragraf ini memiliki warna merah dan background berwarna kuning karena berada pada tag div</p>
+    </div>
+    <p>Paragraf ini memiliki warna cyan dan background darkgray karena berada setelah tag div</p>
+    <p>Paragraf ini memiliki warna cyan dan background tidak ada karena berada di bawah paragraf yang atas</p>
+    
+</body>
+</html>
